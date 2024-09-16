@@ -1,110 +1,120 @@
-/* Barra superior: nombre, nivel y puntos */
+/* Toolbar styles */
 ion-toolbar {
-  --min-height: 80px;
-
+  --min-height: 80px; /* Set minimum height of the toolbar */
+  
   ion-select {
-    font-size: 14px;
+    font-size: 14px; /* Font size for ion-select inside toolbar */
   }
   ion-label {
-    font-size: 18px;
+    font-size: 18px; /* Font size for ion-label inside toolbar */
   }
 }
-  
+
+/* Styles for the question text */
 .question {
-  font-size: small;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: small; /* Set the font size to small */
+  text-align: center; /* Center the text */
+  font-weight: bold; /* Make the text bold */
+  margin-bottom: 20px; /* Space below the question */
 }
 
+/* Container for the main content */
 .content-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%; 
-}
-  
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;  
-  justify-content: center; 
-  align-items: center; 
-  margin: 0 auto;  
-  width: 320px;  
-  height: 320px;  
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  height: 100%; /* Fill the container height */
 }
 
+/* Grid layout for game buttons */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
+  gap: 5px; /* Space between grid items */
+  justify-content: center; /* Center the grid horizontally */
+  align-items: center; /* Align grid items vertically */
+  margin: 0 auto; /* Center the grid in its container */
+  width: 320px; /* Set fixed width for the grid */
+  height: 320px; /* Set fixed height for the grid */
+}
+
+/* Styles for individual grid buttons */
 .grid-button {
   height: 100px;
   width: 100px;
-  font-size: 36px;
-  border: 2px solid black;
-  background: white;
-  color: black;
-  transition: transform 0.3s, box-shadow 0.3s;  
-
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;  
-
+  font-size: 36px; /* Set button text size */
+  border: 2px solid black; /* Add a solid black border */
+  background: white; /* Set background color */
+  color: black; /* Set text color */
+  transition: transform 0.3s, box-shadow 0.3s; /* Add smooth transition on hover and active state */
   
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Initial 3D rotation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow to the button */
+  border-radius: 10px; /* Round the button's corners */
+  
+  /* Hover state: Adds a 3D effect and shadow */
   &:hover {
     transform: perspective(1000px) rotateX(15deg) rotateY(15deg) scale(1.05);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
   }
 
+  /* Active state: Shrinks the button slightly and reduces the shadow */
   &:active {
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
-  
 
+/* Custom styles for Ionic buttons with color success */
 ion-button[color="success"] {
   background-color: green !important;
   color: white;
 }
 
+/* Custom styles for Ionic buttons with color danger */
 ion-button[color="danger"] {
   background-color: red !important;
   color: white;
 }
-  
 
+/* Container for the play button */
 .play-button-container {
-  margin-top: 50px;  
+  margin-top: 50px; /* Space above the button */
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: center; /* Center the button */
+  width: 100%; /* Full width */
 }
-  
+
+/* Style for the play button */
 .play-button {
-  width: 150px;  
-  height: 40px;  
-  --background: #1976D2; 
-  --border-radius: 8px;  
-  font-size: 16px;  
-  font-weight: bold;
+  width: 150px; /* Set button width */
+  height: 40px; /* Set button height */
+  --background: #1976D2; /* Blue background */
+  --border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
 }
-  
-.points{
-  text-align: end;
-  font-weight:bolder;
-  font-size: 1.5em;
+
+/* Styles for points display */
+.points {
+  text-align: end; /* Align text to the right */
+  font-weight: bolder; /* Bold font */
+  font-size: 1.5em; /* Set large font size */
   color: black;
-  margin-bottom: 1.25em;
+  margin-bottom: 1.25em; /* Space below the points */
 }
 
+/* Styles for time remaining display */
 .time-remaining {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.5em;
+  text-align: center; /* Center the text */
+  font-weight: bold; /* Bold font */
+  font-size: 1.5em; /* Large font size */
   color: red;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Space below the text */
 }
 
+/* Custom list styles */
 .list-md {
   margin-left: 0;
   margin-right: 0;
@@ -114,114 +124,129 @@ ion-button[color="danger"] {
   padding-right: 0;
   padding-top: 0px;
   padding-bottom: 0px;
-  background: var(--ion-item-background, var(--ion-background-color, #fff));
+  background: var(--ion-item-background, var(--ion-background-color, #fff)); /* Use Ionic background variables */
 }
 
+/* Custom styles for ion-select text */
 ion-select::part(text) {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 20px; /* Font size for ion-select text */
+  font-weight: 500; /* Medium font weight */
 }
 
+/* Custom styles for ion-select icon */
 ion-select::part(icon) {
-  color: black;
-  opacity: 1;
+  color: black; /* Set icon color to black */
+  opacity: 1; /* Make the icon fully opaque */
 }
 
+/* Style for the game message */
 .game-message {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
+  margin-top: 20px; /* Space above the message */
+  text-align: center; /* Center the message */
+  font-size: 18px; /* Font size */
+  color: #333; /* Dark gray text color */
+  font-weight: bold; /* Bold font */
 }
 
-.username{
-  text-align: center;
-  color:white;
-  font-size: 20px;
-  font-weight: 500;
-  padding-left: 10px;
+/* Style for username display */
+.username {
+  text-align: center; /* Center the username text */
+  color: white; /* White text color */
+  font-size: 20px; /* Font size */
+  font-weight: 500; /* Medium font weight */
+  padding-left: 10px; /* Padding on the left */
 }
 
+/* Responsive styles for smaller screens */
 @media (max-width: 450px) {
 
+  /* Adjust toolbar styles for smaller screens */
   ion-toolbar {
     --min-height: 40px;
   
     ion-select {
-      font-size: 8px;
+      font-size: 8px; /* Smaller font for ion-select */
     }
     ion-label {
-      font-size: 8px;
+      font-size: 8px; /* Smaller font for ion-label */
     }
   }
 
+  /* Adjust h2 heading styles for smaller screens */
   h2 {
-    font-size: medium;
-    margin-top: 3px;
+    font-size: medium; /* Medium font size */
+    margin-top: 3px; /* Small margin above the heading */
   }
 
+  /* Adjust h3 heading styles for smaller screens */
   h3 {
     font-size: medium;
-    margin-top: 0px
+    margin-top: 0px;
   }
 
-  .username{
+  /* Adjust username styles for smaller screens */
+  .username {
     text-align: center;
-    color:white;
-    font-size: 12px;
-    font-weight: 100;
-    padding-left: 5px;
+    color: white;
+    font-size: 12px; /* Smaller font size */
+    font-weight: 100; /* Lighter font weight */
+    padding-left: 5px; /* Reduced padding */
   }
 
+  /* Adjust padding for smaller screens */
   .ion-padding {
-    --padding-top: 3px;
+    --padding-top: 3px; /* Smaller top padding */
   }
 
+  /* Adjust title styles for smaller screens */
   ion-title.title-large {
-    font-size: 10px;
+    font-size: 10px; /* Smaller font size for title */
     padding-right: 0px;
   }
 
+  /* Adjust ion-select text for smaller screens */
   ion-select::part(text) {
     font-size: medium;
-    font-weight: 100;
+    font-weight: 100; /* Lighter font weight */
   }
 
+  /* Adjust grid layout for smaller screens */
   .grid {
     grid-template-columns: repeat(3, 1fr);  
-    grid-gap: 3px;  
-    max-width: 80vw;  
+    grid-gap: 3px; /* Smaller gap between grid items */
+    max-width: 80vw; /* Set maximum width to 80% of the viewport */
   }
 
+  /* Adjust grid button styles for smaller screens */
   .grid-button {
-    aspect-ratio: 1;
-    width: 100%;
+    aspect-ratio: 1; /* Maintain square aspect ratio */
+    width: 100%; /* Full width */
     max-height: 100%;  
-    font-size: 10vw; 
+    font-size: 10vw; /* Font size based on viewport width */
   }
 
-  .points{
+  /* Adjust points display for smaller screens */
+  .points {
     text-align: end;
-    font-weight:bolder;
-    font-size: 0.75em;
+    font-weight: bolder;
+    font-size: 0.75em; /* Smaller font size */
     color: black;
-    margin-bottom: 0.75em;
+    margin-bottom: 0.75em; /* Smaller margin */
   }
 
+  /* Adjust question styles for smaller screens */
   .question {
     font-size: small;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem; /* Smaller margin */
   }
 
+  /* Adjust play button container styles for smaller screens */
   .play-button-container {
-    margin-top: 25px;
+    margin-top: 25px; /* Smaller margin above the button */
     display: flex;
     justify-content: center;
     width: 100%;
   }
-
-  
 }

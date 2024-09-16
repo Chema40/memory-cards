@@ -1,18 +1,20 @@
-/* Alinear el ícono al centro */
+/* Align the icon to the center */
 .icon-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-  
-.center-icon {
-  font-size: 64px;
-  color: #000;
+    display: flex; /* Use flexbox layout for alignment */
+    justify-content: center; /* Horizontally center the icon */
+    margin-top: 50px; /* Add top margin to push the icon down */
 }
 
+/* Style for the game controller icon */
+.center-icon {
+  font-size: 64px; /* Set the size of the icon */
+  color: #000; /* Set the icon color to black */
+}
+
+/* Style for the "JOIN" button */
 .join-button {
-  margin-top: 20px;
-  --background: #1976D2; 
-  --border-radius: 8px;  
-  font-weight: bold;
+  margin-top: 20px; /* Add top margin to create space above the button */
+  --background: #1976D2; /* Set the button background color */
+  --border-radius: 8px; /* Add rounded corners to the button */
+  font-weight: bold; /* Make the button text bold */
 }

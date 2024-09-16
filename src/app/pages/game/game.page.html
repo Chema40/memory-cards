@@ -1,65 +1,80 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <!-- Button on the left to display the username and profile icon -->
     <ion-buttons slot="start">
       <ion-button>
+        <!-- Profile icon with large size -->
         <ion-icon name="person-circle-outline" size="large"></ion-icon>
+        <!-- Display the username dynamically -->
         <div class="username">{{ username }}</div>
       </ion-button>
     </ion-buttons>
 
+    <!-- Title of the toolbar, aligned to the right -->
     <ion-title slot="end" size="large">
       Level
     </ion-title>
-    
+
+    <!-- Dropdown list to select the game difficulty level -->
     <ion-list slot="end" color="primary">
       <ion-item color="primary">
+        <!-- Dropdown menu bound to 'selectedLevel' using ngModel -->
         <ion-select color="primary" [(ngModel)]="selectedLevel">
+          <!-- Difficulty levels: Low, Medium, High -->
           <ion-select-option value="low">Low</ion-select-option>
           <ion-select-option value="medium">Medium</ion-select-option>
           <ion-select-option value="high">High</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen>
-
+  <!-- Section to display the current points -->
   <div class="points">
     <h3><b>Points: {{ points }}</b></h3>
   </div>
 
+  <!-- Instruction displayed at the beginning before the game starts -->
   <div class="question" *ngIf="initGame">
     <h3><b>Click the play button to start a new game</b></h3>
   </div>
 
+  <!-- Message prompting the player to memorize the cards -->
   <div class="question" *ngIf="memorizeCards">
     <h2><b>Memorize the cards</b></h2>
   </div>
 
+  <!-- Message asking the player to find the target number -->
   <div class="question" *ngIf="showTarget">
     <h2><b>Where is the number {{ targetNumber }}?</b></h2>
   </div>
 
+  <!-- Display the remaining time when the game is ongoing and not over -->
   <div class="time-remaining" *ngIf="showTarget && !gameOver">
     <h3>Time Remaining: {{ timeRemaining }}s</h3>
   </div>
 
-  <div  class="game-message" *ngIf="gameOver">
-    <p [innerHTML]="gameMessage"></p>
+  <!-- Display a message at the end of the game -->
+  <div class="game-message" *ngIf="gameOver">
+    <p [innerHTML]="gameMessage"></p> <!-- Inner HTML is used to allow dynamic HTML content -->
   </div>
 
+  <!-- Grid of cards displayed once the game starts -->
   <div class="grid" *ngIf="gameStarted">
+    <!-- Loop through each card and display it in a button -->
     <ion-button *ngFor="let card of cards"
                 (click)="selectCard(card)"
-                [color]="card.color"
+                [color]="card.color" 
                 [disabled]="card.disabled"
                 class="grid-button">
+      <!-- Show the card value or a '?' if the value is hidden -->
       {{ card.showValue ? card.value : '?' }}
     </ion-button>
   </div>
 
+  <!-- Play button to start the game, only shown when the game hasn't started or is over -->
   <div class="play-button-container">
     <ion-button expand="block"
                 class="play-button"

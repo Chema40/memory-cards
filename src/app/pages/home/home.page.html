@@ -1,13 +1,19 @@
 <ion-content class="ion-padding" fullscreen>
-  
+
+  <!-- Container for the game controller icon -->
   <div class="icon-container">
+    <!-- Icon of a game controller, centered using custom CSS class -->
     <ion-icon name="game-controller-outline" class="center-icon"></ion-icon>
   </div>
 
+  <!-- Form item for the user's name input -->
   <ion-item>
+    <!-- Label for the input field, floating above the input when focused -->
     <ion-label position="floating">Name</ion-label>
+    <!-- Input field bound to the 'username' variable via two-way data binding -->
     <ion-input [(ngModel)]="username"></ion-input>
   </ion-item>
 
+  <!-- Button to start the game, calls the 'startGame()' method when clicked -->
   <ion-button expand="block" class="join-button" (click)="startGame()">JOIN</ion-button>
 </ion-content>
