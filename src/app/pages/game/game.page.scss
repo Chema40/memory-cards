@@ -1,0 +1,227 @@
+/* Barra superior: nombre, nivel y puntos */
+ion-toolbar {
+  --min-height: 80px;
+
+  ion-select {
+    font-size: 14px;
+  }
+  ion-label {
+    font-size: 18px;
+  }
+}
+  
+.question {
+  font-size: small;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+  
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;  
+  justify-content: center; 
+  align-items: center; 
+  margin: 0 auto;  
+  width: 320px;  
+  height: 320px;  
+}
+
+.grid-button {
+  height: 100px;
+  width: 100px;
+  font-size: 36px;
+  border: 2px solid black;
+  background: white;
+  color: black;
+  transition: transform 0.3s, box-shadow 0.3s;  
+
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;  
+
+  
+  &:hover {
+    transform: perspective(1000px) rotateX(15deg) rotateY(15deg) scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+  
+
+ion-button[color="success"] {
+  background-color: green !important;
+  color: white;
+}
+
+ion-button[color="danger"] {
+  background-color: red !important;
+  color: white;
+}
+  
+
+.play-button-container {
+  margin-top: 50px;  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+  
+.play-button {
+  width: 150px;  
+  height: 40px;  
+  --background: #1976D2; 
+  --border-radius: 8px;  
+  font-size: 16px;  
+  font-weight: bold;
+}
+  
+.points{
+  text-align: end;
+  font-weight:bolder;
+  font-size: 1.5em;
+  color: black;
+  margin-bottom: 1.25em;
+}
+
+.time-remaining {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.list-md {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background: var(--ion-item-background, var(--ion-background-color, #fff));
+}
+
+ion-select::part(text) {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+ion-select::part(icon) {
+  color: black;
+  opacity: 1;
+}
+
+.game-message {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.username{
+  text-align: center;
+  color:white;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+@media (max-width: 450px) {
+
+  ion-toolbar {
+    --min-height: 40px;
+  
+    ion-select {
+      font-size: 8px;
+    }
+    ion-label {
+      font-size: 8px;
+    }
+  }
+
+  h2 {
+    font-size: medium;
+    margin-top: 3px;
+  }
+
+  h3 {
+    font-size: medium;
+    margin-top: 0px
+  }
+
+  .username{
+    text-align: center;
+    color:white;
+    font-size: 12px;
+    font-weight: 100;
+    padding-left: 5px;
+  }
+
+  .ion-padding {
+    --padding-top: 3px;
+  }
+
+  ion-title.title-large {
+    font-size: 10px;
+    padding-right: 0px;
+  }
+
+  ion-select::part(text) {
+    font-size: medium;
+    font-weight: 100;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);  
+    grid-gap: 3px;  
+    max-width: 80vw;  
+  }
+
+  .grid-button {
+    aspect-ratio: 1;
+    width: 100%;
+    max-height: 100%;  
+    font-size: 10vw; 
+  }
+
+  .points{
+    text-align: end;
+    font-weight:bolder;
+    font-size: 0.75em;
+    color: black;
+    margin-bottom: 0.75em;
+  }
+
+  .question {
+    font-size: small;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+
+  .play-button-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  
+}

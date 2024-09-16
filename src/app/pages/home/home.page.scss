@@ -1,0 +1,18 @@
+/* Alinear el ícono al centro */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+  
+.center-icon {
+  font-size: 64px;
+  color: #000;
+}
+
+.join-button {
+  margin-top: 20px;
+  --background: #1976D2; 
+  --border-radius: 8px;  
+  font-weight: bold;
+}

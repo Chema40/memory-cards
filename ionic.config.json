@@ -1,0 +1,7 @@
+{
+  "name": "memoryCards",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
